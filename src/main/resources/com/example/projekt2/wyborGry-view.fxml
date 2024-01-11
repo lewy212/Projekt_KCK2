@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="708.0" prefWidth="1380.0" spacing="20.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt2.WyborGryController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+          <Label fx:id="labelWyboruGry" text="DINO GAME V" textFill="#f343f3">
+              <font>
+                  <Font name="System Bold Italic" size="96.0" />
+              </font>
+              <effect>
+                  <Lighting>
+                      <bumpInput>
+                          <Shadow />
+                      </bumpInput>
+                      <light>
+                          <Light.Distant />
+                      </light>
+                  </Lighting>
+              </effect>
+          </Label>
+          <Label text="S TIC TAC TOE" textFill="#ff1212">
+              <font>
+                  <Font name="System Bold Italic" size="96.0" />
+              </font>
+              <effect>
+                  <Lighting>
+                      <bumpInput>
+                          <Shadow />
+                      </bumpInput>
+                      <light>
+                          <Light.Distant />
+                      </light>
+                  </Lighting>
+              </effect>
+          </Label>
+      </children>
+   </HBox>
+    <Button fx:id="dinoButton" onAction="#goToDino" styleClass="button-transparent" text="Zagraj w Dino" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+        <VBox.margin>
+            <Insets top="170.0" />
+        </VBox.margin></Button>
+    <Button fx:id="ticTacToeButton" mnemonicParsing="false" onAction="#goToKolkoKrzyzyk" styleClass="button-transparent2" text="Zagraj w kolko krzyzyk" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+    </Button>
+</VBox>

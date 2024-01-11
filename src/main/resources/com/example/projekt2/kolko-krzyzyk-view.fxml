@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="708.0" prefWidth="1380.0" spacing="20.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt2.KolkoKrzyzykController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label fx:id="labelMenu" alignment="TOP_CENTER" layoutY="45.0" prefHeight="37.0" prefWidth="541.0" text="TIC TAC TOE" textFill="#f80303">
+         <font>
+            <Font name="System Bold Italic" size="55.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="wypiszRuch" alignment="CENTER" layoutY="45.0" prefHeight="55.0" prefWidth="180.0" text="Gracz X" textFill="#f80303">
+         <font>
+            <Font name="System Bold Italic" size="31.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="wypiszWynik" alignment="CENTER" layoutY="45.0" prefHeight="27.0" prefWidth="180.0" text="0:0" textFill="#f80303">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <VBox.margin>
+            <Insets top="-30.0" />
+         </VBox.margin>
+      </Label>
+      <FlowPane fx:id="plansza" layoutX="188.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="225.0">
+         <children>
+            <Button fx:id="button1" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button2" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button3" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button4" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button5" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button6" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button7" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button8" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+            <Button fx:id="button9" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="" />
+         </children></FlowPane>
+      <Button fx:id="resetButton" mnemonicParsing="false" onAction="#restart" text="Zresetuj grę" />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#cofnij" text="Wróć" />
+   </children>
+</VBox>

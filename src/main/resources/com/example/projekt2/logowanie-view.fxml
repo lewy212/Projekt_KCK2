@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="434.0" prefWidth="738.0" spacing="20.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt2.LogowanieController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label fx:id="labelMenu" text="DINO GAME" textFill="#f343f3">
+        <font>
+            <Font name="System Bold Italic" size="96.0" />
+        </font>
+        <effect>
+            <Lighting>
+                <bumpInput>
+                    <Shadow />
+                </bumpInput>
+                <light>
+                    <Light.Distant />
+                </light>
+            </Lighting>
+        </effect>
+    </Label>
+    <VBox alignment="CENTER" prefHeight="72.0" prefWidth="205.0" spacing="10">
+        <Label fx:id="warningField" alignment="CENTER" prefWidth="539.0" text="" textFill="RED">
+            <font>
+                <Font name="System Bold Italic" size="27.0" />
+            </font>
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+                        <Light.Distant />
+                    </light>
+                </Lighting>
+            </effect>
+        </Label>
+        <Label fx:id="loginLabel" alignment="CENTER" prefWidth="539.0" text="Login" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+                        <Light.Distant />
+                    </light>
+                </Lighting>
+            </effect>
+        </Label>
+      <TextField fx:id="loginField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="201.0" />
+        <Label fx:id="passwordLabel" alignment="CENTER" prefWidth="539.0" text="Password" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+            <effect>
+                <Lighting>
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+                        <Light.Distant />
+                    </light>
+                </Lighting>
+            </effect>
+        </Label>
+        <PasswordField fx:id="passwordField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" styleClass="text-input" />
+      <VBox.margin>
+         <Insets top="100.0" />
+      </VBox.margin>
+    </VBox>
+    <Button fx:id="zalogujButton" onAction="#zaloguj" styleClass="button-transparent" text="Login" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+        <VBox.margin>
+            <Insets top="20.0" />
+        </VBox.margin></Button>
+    <Button fx:id="powrotButton" mnemonicParsing="false" onAction="#cofnij" styleClass="button-transparent" text="Wróć" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+      <VBox.margin>
+         <Insets top="40.0" />
+      </VBox.margin>
+    </Button>
+</VBox>

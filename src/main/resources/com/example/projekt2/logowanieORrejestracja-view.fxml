@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="434.0" prefWidth="738.0" spacing="20.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt2.LogowanieOrRejestracjaController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label fx:id="labelMenu" text="DINO GAME" textFill="#f343f3">
+        <font>
+            <Font name="System Bold Italic" size="96.0" />
+        </font>
+        <effect>
+            <Lighting>
+                <bumpInput>
+                    <Shadow />
+                </bumpInput>
+                <light>
+                    <Light.Distant />
+                </light>
+            </Lighting>
+        </effect>
+    </Label>
+    <Button fx:id="zalogujButton" onAction="#goToLogowanie"  styleClass="button-transparent" text="Zaloguj się" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+        <VBox.margin>
+            <Insets top="170.0" />
+        </VBox.margin></Button>
+    <Button fx:id="zarejestrujButton" onAction="#goToRejestracja" mnemonicParsing="false" styleClass="button-transparent" text="Zarejestruj się" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+    </Button>
+    <Button fx:id="powrotButton" onAction="#powrot" mnemonicParsing="false" styleClass="button-transparent" text="Wróć" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+    </Button>
+</VBox>

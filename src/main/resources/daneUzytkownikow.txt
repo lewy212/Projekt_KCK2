@@ -1,0 +1,2 @@
+admin,admin1,lewy
+user,user1,lubiePlacki

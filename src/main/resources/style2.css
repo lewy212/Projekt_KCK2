@@ -1,0 +1,102 @@
+.bodybg{
+    -fx-background-image: url("/kolko_krzyzyk_gra_background.png");
+    -fx-background-size: cover;
+    -fx-background-size: 100% 100%;
+}
+.button-transparent {
+    -fx-background-color: rgba(100, 98, 98, 0.53); /* Białe tło z opacity 0.8 */
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+}
+.button-transparent:hover {
+    -fx-background-color: #f343f3;
+}
+.button-transparent2 {
+    -fx-background-color: rgba(100, 98, 98, 0.53); /* Białe tło z opacity 0.8 */
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+}
+
+.button-transparent2:hover {
+    -fx-background-color: #ff0000;
+}
+
+.choice-box .text {
+    -fx-fill: #ffffff; /* Kolor tekstu dla wybranego elementu */
+}
+
+.choice-box {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+    -fx-border-color: #f343f3;
+    -fx-border-width: 2px;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+/* Stylizacja rozwijanej listy */
+.choice-box .context-menu {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #f343f3;
+    -fx-border-width: 2px;
+}
+
+/* Stylizacja elementów w rozwijanej liście */
+.choice-box .context-menu .menu-item {
+    -fx-padding: 5px 10px;
+    -fx-opacity: 1; /* Wartość od 0 do 1, gdzie 1 oznacza pełną widoczność */
+}
+
+/* Stylizacja zaznaczonego elementu w rozwijanej liście */
+.choice-box .context-menu .menu-item:selected {
+    -fx-background-color: #f343f3; /* Kolor fioletowy po zaznaczeniu */
+    -fx-fill: #ffffff; /* Kolor biały tekstu po zaznaczeniu */
+}
+
+/* Stylizacja podświetlonego elementu w rozwijanej liście po najechaniu myszką */
+.choice-box .context-menu .menu-item:hover {
+    -fx-background-color: #4a4a4a; /* Kolor szary po najechaniu myszką */
+    -fx-fill: #ffffff; /* Kolor biały tekstu po najechaniu myszką */
+}
+.root {
+    -fx-background-color: #3498db; /* Ustaw kolor paska tytułowego */
+}
+
+.window-buttons {
+    -fx-background-color: #2980b9; /* Ustaw kolor przycisków minimalizacji, maksymalizacji i zamknięcia */
+}
+.my-table .text {
+    -fx-fill: #ffffff; /* Kolor tekstu dla wybranego elementu */
+}
+
+.my-table {
+    -fx-background-color: #1f1f1f; /* Kolor tła tabeli */
+    -fx-text-fill: white; /* Kolor tekstu w tabeli */
+}
+
+/* Styl dla nagłówków kolumn */
+.my-table .column-header {
+    -fx-background-color: #f343f3; /* Kolor tła nagłówków kolumn (dopasowany do koloru paska tytułowego) */
+    -fx-text-fill: white; /* Biały kolor tekstu w nagłówkach kolumn */
+}
+
+/* Styl dla komórek wierszy */
+.my-table .table-cell {
+    -fx-padding: 20px;
+    -fx-background-color: #000000; /* Czarny kolor tła wierszy */
+    -fx-text-fill: white; /* Biały kolor tekstu w wierszach */
+    -fx-border-color: #f343f3; /* Kolor fioletowej kreski oddzielającej wiersze */
+    -fx-border-width: 0 0 1 0; /* Grubość kreski, tylko na dole */
+    -fx-alignment: CENTER; /* Ustawienie tekstu na środek komórki */
+}
+
+.my-table .row:last-child .table-cell {
+    -fx-border-width: 0; /* Wyłącz kreskę dla ostatniego wiersza */
+}
+
+.my-table .row:selected {
+    -fx-background-color: #4a4a4a; /* Kolor tła dla zaznaczonych wierszy */
+    -fx-text-fill: white; /* Kolor tekstu dla zaznaczonych wierszy */
+}

@@ -1,0 +1,9 @@
+lewy,Łatwy,100
+lubiePlacki,Łatwy,80
+lewy,Łatwy,9
+lewy,Średni,200
+lubiePlacki,Średni,130
+lewy,Średni,150
+lewy,Trudny,150
+lubiePlacki,Trudny,140
+lewy,Trudny,130

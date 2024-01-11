@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="434.0" prefWidth="738.0" spacing="20.0" styleClass="bodybg" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projekt2.UstawieniaController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label fx:id="labelMenu" text="DINO GAME" textFill="#f343f3">
+        <font>
+            <Font name="System Bold Italic" size="96.0" />
+        </font>
+        <effect>
+            <Lighting>
+                <bumpInput>
+                    <Shadow />
+                </bumpInput>
+                <light>
+                    <Light.Distant />
+                </light>
+            </Lighting>
+        </effect>
+    </Label>
+   <Label text="Menu" textFill="#f343f3">
+      <VBox.margin>
+         <Insets top="120.0" />
+      </VBox.margin>
+      <font>
+         <Font name="System Bold Italic" size="64.0" />
+      </font>
+      <effect>
+         <Lighting>
+            <bumpInput>
+               <Shadow />
+            </bumpInput>
+            <light>
+               <Light.Distant />
+            </light>
+         </Lighting>
+      </effect>
+   </Label>
+
+    <HBox fx:id="tabela" alignment="CENTER">
+        <Label text="Poziom trudności:" textFill="WHITE">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <ChoiceBox fx:id="poziomTrudnosci" styleClass="choice-box">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Łatwy" />
+                    <String fx:value="Średni" />
+                    <String fx:value="Trudny" />
+                </FXCollections>
+            </items>
+         <HBox.margin>
+            <Insets left="30.0" />
+         </HBox.margin>
+        </ChoiceBox>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+    </HBox>
+    <HBox fx:id="efekty" alignment="CENTER" spacing="10.0">
+        <Label text="Włącz efekty dzwiękowe:" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="checkEfektyDzwiekowe" mnemonicParsing="false" styleClass="check-box">
+         <HBox.margin>
+            <Insets top="5.0" />
+         </HBox.margin></CheckBox>
+    </HBox>
+
+
+    <Button fx:id="powrotButton" mnemonicParsing="false" onAction="#Powrot" styleClass="button-transparent" text="Powrót" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+    </Button>
+</VBox>

@@ -1,0 +1,95 @@
+.bodybg{
+    -fx-background-color: white;
+
+}
+
+/*#button1 {*/
+/*    -fx-border-width: 0 2px 0 2px; !* Obramowanie 2 piksele z lewej i 2 z prawej *!*/
+/*    -fx-border-color: blue;*/
+/*    -fx-border-radius: 2px;*/
+/*}*/
+#button1{
+    -fx-border-width: 0px 2px 2px 0px; /* Obramowanie 2 piksele z lewej i 2 z prawej */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button2{
+    -fx-border-width: 0px 2px 2px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button3{
+    -fx-border-width: 0px 0px 2px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button4{
+    -fx-border-width: 2px 2px 2px 0px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button5{
+    -fx-border-width: 2px 2px 2px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button6{
+    -fx-border-width: 2px 0px 2px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button7{
+    -fx-border-width: 2px 2px 0px 0px; /* Obramowanie 2 piksele z lewej i 2 z prawej */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button8{
+    -fx-border-width: 2px 2px 0px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+#button9{
+    -fx-border-width: 2px 0px 0px 2px; /* gora, prawo,dol,lewo */
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+}
+.button:disabled, .button:pressed {
+    -fx-opacity: 1.0; /* Wyłącz przezroczystość dla wyłączonego i wciśniętego przycisku */
+    -fx-background-color: #dddddd; /* Przykładowy kolor tła dla wyłączonego i wciśniętego przycisku */
+    -fx-text-fill: #000000; /* Przykładowy kolor tekstu dla wyłączonego i wciśniętego przycisku */
+    /* Dodaj inne dostosowania stylów według potrzeb */
+}
+#resetButton {
+    -fx-background-color: #ff0000; /* Kolor tła */
+    -fx-text-fill: #ffffff; /* Kolor tekstu */
+    -fx-font-size: 16px; /* Rozmiar czcionki */
+    -fx-padding: 10px 20px; /* Wewnętrzny odstęp */
+    -fx-border-color: #000000; /* Kolor obramowania */
+    -fx-border-width: 2px; /* Grubość obramowania */
+    -fx-border-radius: 5px; /* Promień zaokrąglenia */
+}
+
+#resetButton:hover {
+    -fx-background-color: #cc0000; /* Kolor tła po najechaniu myszą */
+}
+
+#resetButton:pressed {
+    -fx-background-color: #aa0000; /* Kolor tła po wciśnięciu przycisku */
+}
+#backButton {
+    -fx-background-color: #007fff; /* Kolor tła */
+    -fx-text-fill: #ffffff; /* Kolor tekstu */
+    -fx-font-size: 16px; /* Rozmiar czcionki */
+    -fx-padding: 10px 20px; /* Wewnętrzny odstęp */
+    -fx-border-color: #000000; /* Kolor obramowania */
+    -fx-border-width: 2px; /* Grubość obramowania */
+    -fx-border-radius: 5px; /* Promień zaokrąglenia */
+}
+
+#backButton:hover {
+    -fx-background-color: #0058cc; /* Kolor tła po najechaniu myszą */
+}
+
+#backButton:pressed {
+    -fx-background-color: #003366; /* Kolor tła po wciśnięciu przycisku */
+}
