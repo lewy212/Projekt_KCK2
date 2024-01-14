@@ -42,6 +42,11 @@
          <Font size="23.0" />
       </font>
    </Button>
+    <Button  fx:id="instrukcjaButton"  mnemonicParsing="false" onAction="#goToInstrukcja" styleClass="button-transparent" text="Instrukcja" textFill="WHITE">
+        <font>
+            <Font size="23.0" />
+        </font>
+    </Button>
    <Button  fx:id="wylogujButton" mnemonicParsing="false" onAction="#wylaczAplikacje" styleClass="button-transparent" text="Wyloguj się" textFill="WHITE">
       <font>
          <Font size="23.0" />

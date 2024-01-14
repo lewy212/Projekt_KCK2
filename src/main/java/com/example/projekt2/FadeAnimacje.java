@@ -4,6 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class FadeAnimacje {
@@ -46,6 +47,12 @@ public class FadeAnimacje {
     }
     public void addFadeInAnimation(Label label) {
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000), label);
+        fadeTransition.setFromValue(0.0);
+        fadeTransition.setToValue(1.0);
+        fadeTransition.play();
+    }
+    public void addFadeInAnimation(VBox vBox) {
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000), vBox);
         fadeTransition.setFromValue(0.0);
         fadeTransition.setToValue(1.0);
         fadeTransition.play();

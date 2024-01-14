@@ -27,7 +27,7 @@
             </Lighting>
         </effect>
     </Label>
-   <Label text="Menu" textFill="#f343f3">
+   <Label text="Ustawienia" textFill="#f343f3">
       <VBox.margin>
          <Insets top="120.0" />
       </VBox.margin>

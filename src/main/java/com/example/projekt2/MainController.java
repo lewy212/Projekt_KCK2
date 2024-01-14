@@ -29,6 +29,8 @@ public class MainController {
 
     @FXML
     private Button tablicaWynikowButton;
+    @FXML
+    private Button instrukcjaButton;
 
     @FXML
     private Button wylogujButton;
@@ -43,6 +45,7 @@ public class MainController {
         fadeAnimacje.addFadeInAnimation(ustawieniaButton);
         fadeAnimacje.addFadeInAnimation(tablicaWynikowButton);
         fadeAnimacje.addFadeInAnimation(wylogujButton);
+        fadeAnimacje.addFadeInAnimation(instrukcjaButton);
     }
 
     @FXML
@@ -124,8 +127,8 @@ public class MainController {
             alert.setHeaderText("Czy chcesz zagrac w ulatwiony trudny poziom?");
 
             // Dodajemy przyciski do okna
-            ButtonType buttonTypeOK = new ButtonType("OK");
-            ButtonType buttonTypeCancel = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+            ButtonType buttonTypeOK = new ButtonType("Tak");
+            ButtonType buttonTypeCancel = new ButtonType("Nie", ButtonBar.ButtonData.CANCEL_CLOSE);
             alert.getButtonTypes().setAll(buttonTypeOK, buttonTypeCancel);
             alert.getDialogPane().getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
             // Czekamy na odpowiedź użytkownika
@@ -187,6 +190,16 @@ public class MainController {
         Stage stage = (Stage) currentScene.getWindow();
         root.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
+        stage.setScene(new Scene(root, currentScene.getWidth(), currentScene.getHeight()));
+    }
+    @FXML
+    protected void goToInstrukcja() throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("instrukcja-view.fxml"));
+        Parent root = loader.load();
+        Scene currentScene = labelMenu.getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        root.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         stage.setScene(new Scene(root, currentScene.getWidth(), currentScene.getHeight()));
     }
 
