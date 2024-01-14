@@ -143,3 +143,35 @@
 .powrot-button:hover {
     -fx-background-color: #45a049; /* Kolor tła po najechaniu myszą */
 }
+.alert {
+    -fx-background-color: #f343f3;
+    -fx-text-fill: white;
+}
+
+.alert .header-panel {
+    -fx-background-color: #f343f3; /* Kolor tła nagłówka alertu (dopasowany do koloru paska tytułowego) */
+    -fx-text-fill: white; /* Biały kolor tekstu w nagłówku */
+}
+
+.alert .content {
+    -fx-background-color: #f343f3; /* Kolor tła treści alertu */
+    -fx-text-fill: white; /* Biały kolor tekstu w treści */
+}
+
+.alert .button-bar {
+    -fx-background-color: #f343f3; /* Kolor tła paska przycisków */
+}
+
+.alert .button-bar .button {
+    -fx-background-color: rgba(100, 98, 98, 0.53);/* Kolor tła przycisków */
+    -fx-text-fill: white; /* Biały kolor tekstu w przyciskach */
+    -fx-font-size: 14px; /* Rozmiar czcionki */
+    -fx-font-weight: bold; /* Pogrubienie tekstu */
+    -fx-padding: 10px 20px; /* Wewnętrzny odstęp */
+    -fx-border-radius: 5px; /* Promień zaokrąglenia rogów */
+    -fx-border-color: #000000; /* Kolor obramowania */
+}
+
+.alert .button-bar .button:hover {
+    -fx-background-color: #000000; /* Kolor tła przycisków po najechaniu myszą */
+}

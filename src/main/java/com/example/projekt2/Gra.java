@@ -51,12 +51,13 @@ public class Gra {
     private Image image_pomocnicze;
     private Postac postac;
     private Moneta moneta;
+    private Ptak ptaszek;
     private Rectangle obramowanieGry,kryjacyLewo,kryjacyPrawo;
     private double windowWidth, windowHeight;
     private boolean skok = false,spadek = false,dodajPoPrzeskoczeniu=true,bylem_na_platformie,wlaczSpadanie = false,czy_sa_ptaki,stworz_zycie=true,czy_jest_muzyka;
     private int czas_skoku = 0,czas_spadku=0;
     private Pane pane;
-    private Timeline skokline, czasPrzesuwaniaPodlogi,zmianaWygladuPostaci, dodawajWynik,spadanieline,zmianaWygladuMonety;
+    private Timeline skokline, czasPrzesuwaniaPodlogi,zmianaWygladuPostaci, dodawajWynik,spadanieline,zmianaWygladuMonety,zmianaWygladuPtaka;
     private Duration frameDuration;
     private double wspolrzedneXpierwszejPodlogi,dlugosc_platformy_x=0, pozycja_startowa_Y_postaci=0;
     private String poziom;
@@ -73,6 +74,7 @@ public class Gra {
         windowHeight = stage.getHeight();//wysokosc
         postac = new Postac(1,2);
         moneta = new Moneta(1,2);
+        ptaszek = new Ptak(1,2);
         listaPodlogi = new ArrayList<>();
         listaScian = new ArrayList<>();
         listaPlatform = new ArrayList<>();
@@ -239,9 +241,9 @@ public class Gra {
     private void stworzNowegoPtaka(int ile){
         Ptak nowyPtak = new Ptak(obramowanieGry.getTranslateX()+8 + 25*32,listaPodlogiView.get(1).getTranslateY()-listaPodlogiView.get(1).getImage().getHeight()*5);
         ImageView nowyPtakView = new ImageView();
-        nowyPtakView.setImage(nowyPtak.getWyglad());
-        nowyPtakView.setTranslateX(nowyPtak.getX()+ile*nowyPtak.getWyglad().getWidth()+5*ile);
-        nowyPtakView.setTranslateY(nowyPtak.getY());
+        nowyPtakView.setImage(nowyPtak.getAnimacja1());
+        nowyPtakView.setTranslateX(nowyPtak.getX()+ile*nowyPtak.getAnimacja1().getWidth()+5*ile);
+        nowyPtakView.setTranslateY(nowyPtak.getY()-10);
         Scale flip = new Scale(-1, 1, nowyPtakView.getImage().getWidth() / 2, nowyPtakView.getImage().getHeight() / 2);
         nowyPtakView.getTransforms().add(flip);
         listaPtakow.add(nowyPtak);
@@ -286,12 +288,17 @@ public class Gra {
         zmianaWygladuPostaci = new Timeline(
                 new KeyFrame(frameDuration, new ChangeImageHandler())
         );
+
         frameDuration = Duration.seconds(0.1);
         zmianaWygladuMonety = new Timeline(
                 new KeyFrame(frameDuration, new zmienWygladMonety())
         );
+        //frameDuration = Duration.seconds(2);
+        zmianaWygladuPtaka = new Timeline(
+                new KeyFrame(frameDuration,new zmienWygladPtaka())
+        );
 
-        Duration czasSkoku = Duration.seconds(0.005);
+                Duration czasSkoku = Duration.seconds(0.005);
         skokline = new Timeline(
                 new KeyFrame(czasSkoku, new ZmienWygladSkok())
         );
@@ -319,6 +326,9 @@ public class Gra {
 
         zmianaWygladuMonety.setCycleCount(Timeline.INDEFINITE);
         zmianaWygladuMonety.play();
+
+        zmianaWygladuPtaka.setCycleCount(Timeline.INDEFINITE);
+        zmianaWygladuPtaka.play();
 
         dodawajWynik.setCycleCount(Timeline.INDEFINITE);
         dodawajWynik.play();
@@ -392,6 +402,102 @@ public class Gra {
                 if(!strona)
                 {
                     zmianaMonetyIndex -=1;
+                }
+
+            }
+        }
+    }
+    private class zmienWygladPtaka implements EventHandler<ActionEvent> {
+        private int zmianaPtakaIndex=1;
+        private boolean strona=true;
+
+        @Override
+        public void handle(ActionEvent event) {
+            if(listaPtakowView.size()>0)
+            {
+                switch (zmianaPtakaIndex) {
+                    case 1:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja1());
+                        }
+                        strona = true;
+                        break;
+                    case 2:
+                        for (int i = 0; i < listaMonetView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja2());
+                        }
+                        break;
+                    case 3:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja3());
+                        }
+                        break;
+                    case 4:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja4());
+                        }
+                        break;
+                    case 5:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja5());
+                        }
+                        break;
+                    case 6:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja6());
+                        }
+                        break;
+                    case 7:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja7());
+                        }
+                        break;
+                    case 8:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja8());
+                        }
+                        break;
+                    case 9:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja9());
+                        }
+                        break;
+                    case 10:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja10());
+                            strona = false;
+                        }
+                        break;
+                    case 11:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja11());
+
+                        }
+                        break;
+                    case 12:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja12());
+                        }
+                        break;
+                    case 13:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja13());
+                        }
+                        break;
+                    case 14:
+                        for (int i = 0; i < listaPtakowView.size(); i++) {
+                            listaPtakowView.get(i).setImage(ptaszek.getAnimacja14());
+
+                        }
+                        break;
+                }
+                if(strona)
+                {
+                    zmianaPtakaIndex +=1;
+                }
+                if(!strona)
+                {
+                    zmianaPtakaIndex -=1;
                 }
 
             }
@@ -491,11 +597,11 @@ public class Gra {
                 listaPodlogiView.remove(0);
 
                 stworzNowaPodloge(pane);
-                if(postaw_sciane==co_ile_sciana && poziom.equals("Łatwy"))
+                if(postaw_sciane==co_ile_sciana && (poziom.equals("Łatwy") ||poziom.equals("latwy_ulatwiony")||poziom.equals("sredni_ulatwiony")))
                 {
                     stworzNowaSciane();
                 }
-                else if (postaw_sciane==co_ile_sciana&& (poziom.equals("Średni")||poziom.equals("Trudny")))
+                else if (postaw_sciane==co_ile_sciana&& (poziom.equals("Średni")||poziom.equals("Trudny")||poziom.equals("trudny_ulatwiony")))
                 {
                     Random random = new Random();
                     double losowaLiczba = random.nextDouble();
@@ -506,7 +612,7 @@ public class Gra {
                         postaw_sciane = (postaw_sciane % co_ile_sciana) + 1;
                     }
                 }
-                else if (postaw_sciane!=co_ile_sciana&& (poziom.equals("Średni")||poziom.equals("Trudny")))
+                else if (postaw_sciane!=co_ile_sciana&& (poziom.equals("Średni")||poziom.equals("Trudny")||poziom.equals("trudny_ulatwiony")))
                 {
 
                     postaw_sciane = (postaw_sciane % co_ile_sciana) + 1;
@@ -537,10 +643,11 @@ public class Gra {
                 pane.getChildren().add(obramowanieGry);
                 pane.getChildren().add(kryjacyLewo);
                 pane.getChildren().add(kryjacyPrawo);
-                if(poziom.equals("Łatwy"))
+                if(poziom.equals("Łatwy")||poziom.equals("latwy_ulatwiony")||poziom.equals("sredni_ulatwiony"))
                 {
                     postaw_sciane = (postaw_sciane % co_ile_sciana) + 1;
                 }
+
                 if(ile_postawilem_platformy==dlugosc_platformy)
                 {
 
@@ -615,7 +722,7 @@ public class Gra {
                         czasPrzesuwaniaPodlogi.stop();
                         skokline.stop();
                         dodawajWynik.stop();
-                        WynikiModel.getInstance().getWyniki().add(new Wynik(ZalogowanyUser.getInstance().getNickname(), poziom, wynik));
+                        sprawdzWyniki();
                         powrotButton.setDisable(false);
                     }
                 }
@@ -677,8 +784,8 @@ public class Gra {
         {
             for(int i=0;i<listaPtakowView.size();i++)
             {
-                if(listaPtakowView.get(i).getTranslateX()-(listaPtakowView.get(i).getImage().getWidth()/2)<=imageView1.getTranslateX() &&
-                        listaPtakowView.get(i).getTranslateX()+(listaPtakowView.get(i).getImage().getWidth()/2)>=imageView1.getTranslateX())
+                if(listaPtakowView.get(i).getTranslateX()-(listaPtakowView.get(i).getImage().getWidth()/2)+10<=imageView1.getTranslateX() &&
+                        listaPtakowView.get(i).getTranslateX()+(listaPtakowView.get(i).getImage().getWidth()/2)-7>=imageView1.getTranslateX())
                 {
                     if (listaPtakowView.get(i).getTranslateY() + (listaPtakowView.get(i).getImage().getHeight() / 2) >= imageView1.getTranslateY() -(imageView1.getImage().getHeight()/2) -5 &&
                             imageView1.getTranslateY() +(imageView1.getImage().getHeight()/2) -2 >= listaPtakowView.get(i).getTranslateY() - (listaPtakowView.get(i).getImage().getHeight() / 2))
@@ -710,7 +817,7 @@ public class Gra {
                             czasPrzesuwaniaPodlogi.stop();
                             skokline.stop();
                             dodawajWynik.stop();
-                            WynikiModel.getInstance().getWyniki().add(new Wynik(ZalogowanyUser.getInstance().getNickname(), poziom, wynik));
+                            sprawdzWyniki();
                             powrotButton.setDisable(false);
                             break;
                         }
@@ -973,7 +1080,91 @@ public class Gra {
             co_ile_serce=6;
             postac.setZycie(1);
         }
+        if(trudnosc.equals("latwy_ulatwiony"))
+        {
+            co_ile_sciana=16;
+            co_ile_platforma=10;
+            co_ile_ptak=18;
+            co_ile_moneta = 15;
+            ile_dodaje_moneta = 30;
+            mnoznik_wyniku=1;
+            dlugosc_platformy=14;
+            ile_dodac_po_ominieciu=10;
+            dlugosc_platformy_x = image_pomocnicze.getWidth()*14;
+            czy_sa_ptaki=false;
+            co_ile_serce=3;
+            postac.setZycie(3);
+        }
+        if(trudnosc.equals("sredni_ulatwiony"))
+        {
+            co_ile_sciana=10;
+            co_ile_platforma=12;
+            co_ile_ptak=18;
+            co_ile_moneta = 20;
+            ile_dodaje_moneta = 100;
+            mnoznik_wyniku=10;
+            dlugosc_platformy=8;
+            ile_dodac_po_ominieciu=100;
+            co_ile_zmiana_tempa=300;
+            co_ile_serce=5;
+            dlugosc_platformy_x = image_pomocnicze.getWidth()*8;
+            czy_sa_ptaki=false;
+            postac.setZycie(3);
+        }
     }
+
+    public void sprawdzWyniki()
+    {
+        if(poziom.equals("Łatwy"))
+        {
+            if(wynik<200)
+                ZalogowanyUser.getInstance().setPrzegrane_latwy(ZalogowanyUser.getInstance().getPrzegrane_latwy()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_latwy(0);
+
+            WynikiModel.getInstance().getWyniki().add(new Wynik(ZalogowanyUser.getInstance().getNickname(), poziom, wynik));
+        }
+        if(poziom.equals("Średni"))
+        {
+            if(wynik<600)
+                ZalogowanyUser.getInstance().setPrzegrane_sredni(ZalogowanyUser.getInstance().getPrzegrane_sredni()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_sredni(0);
+
+            WynikiModel.getInstance().getWyniki().add(new Wynik(ZalogowanyUser.getInstance().getNickname(), poziom, wynik));
+        }
+        if(poziom.equals("Trudny"))
+        {
+            if(wynik<1000)
+                ZalogowanyUser.getInstance().setPrzegrane_trudny(ZalogowanyUser.getInstance().getPrzegrane_trudny()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_trudny(0);
+
+            WynikiModel.getInstance().getWyniki().add(new Wynik(ZalogowanyUser.getInstance().getNickname(), poziom, wynik));
+        }
+        if(poziom.equals("latwy_ulatwiony"))
+        {
+            if(wynik<200)
+                ZalogowanyUser.getInstance().setPrzegrane_latwy(ZalogowanyUser.getInstance().getPrzegrane_latwy()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_latwy(0);
+        }
+        if(poziom.equals("sredni_ulatwiony"))
+        {
+            if(wynik<600)
+                ZalogowanyUser.getInstance().setPrzegrane_sredni(ZalogowanyUser.getInstance().getPrzegrane_sredni()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_sredni(0);
+        }
+        if(poziom.equals("trudny_ulatwiony"))
+        {
+            if(wynik<1000)
+                ZalogowanyUser.getInstance().setPrzegrane_trudny(ZalogowanyUser.getInstance().getPrzegrane_trudny()+1);
+            else
+                ZalogowanyUser.getInstance().setPrzegrane_trudny(0);
+        }
+    }
+
     public void addKeyEvents(Scene scene) {
         scene.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.UP) {

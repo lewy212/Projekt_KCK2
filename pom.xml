@@ -35,6 +35,11 @@
             <artifactId>controlsfx</artifactId>
             <version>11.1.0</version> <!-- Aktualizuj wersję do najnowszej dostępnej -->
         </dependency>
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.10</version> <!-- Użyj najnowszej dostępnej wersji -->
+        </dependency>
 
         <dependency>
             <groupId>com.github.almasb</groupId>
